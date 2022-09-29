@@ -28,6 +28,7 @@ API: /click/find/{campaign}/{startTimestamp}/{endTimestamp}
 3. Uploaded data to MySQL database
 4. Postman for testing the APIs (or other similar service)
 
+### Run/Test application
 1. Modify settings in src/main/resources/application.properties: spring.datasource.url, spring.datasource.username, spring.datasource.password, server.port, to match your system settings.
 2. Run the application
 3. In Postman test application by running the following:
