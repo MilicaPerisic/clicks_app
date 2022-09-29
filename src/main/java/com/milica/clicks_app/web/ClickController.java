@@ -26,7 +26,8 @@ public class ClickController {
     @GetMapping("/find/{campaign}/{startTimestamp}/{endTimestamp}")
     public ResponseEntity getNumOfClicksByCampaignIdAndTimestampRange(@PathVariable("campaign") Long campaign, @PathVariable("startTimestamp") String startTimestamp, @PathVariable("endTimestamp") String endTimestamp) throws ParseException{
        try {
-           return new ResponseEntity<>(clickService.getClicksByCampaignAndTimestampRange(campaign, startTimestamp, endTimestamp), HttpStatus.OK);
+           Integer response = clickService.getClicksByCampaignAndTimestampRange(campaign, startTimestamp, endTimestamp);
+           return new ResponseEntity<>(response, HttpStatus.OK);
        }catch (ParseException e){
            return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
     }
